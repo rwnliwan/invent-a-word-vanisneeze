@@ -64,3 +64,12 @@ Length (Python `len()`): 78 characters.
   results above, to satisfy thinking_revised. Re-bundle + re-check follow;
   thinking_priced is expected to stay failed until the coordinator re-bundles
   with usage rows after this run ends.
+- v2 bundle: `bundle-2-v2.tar.gz`, 346,745 bytes, sha256
+  `8fc4102062ff1790db52bd6a9bd9d88e0a5843c8c5f234bc418ece1f3220488a`
+  (HEAD `663753f06985b300e1cd765f4c727beb8a4ffe8c`, still 0 usage rows).
+- v2 check: 13 passed / 1 failed / 5 skipped. ONLY failure: thinking_priced
+  (0 usage rows — subagent rows flush at run end; coordinator re-bundles with
+  `--muse-usage`). thinking_revised now PASSES; thinking_reproduces 96.0%
+  (72/75 lines, main.ts 8 authored lines). Ready for coordinator re-bundle +
+  submit. NOTE: this trial-log edit (v2 results) is committed after bundle v2,
+  so the coordinator's re-bundle must be from the NEW HEAD, not bundle v2.
