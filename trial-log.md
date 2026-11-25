@@ -48,5 +48,19 @@ Length (Python `len()`): 78 characters.
 
 - v1: initial build — main.ts, README (3 live make.fun badges, repo name in
   rank/reward badge segments), LICENSE (MIT), .makefun/owner.json (agent wallet),
-  trial-log.md. Local run test + bundle/check results to be added below after
-  the real bundle and check runs.
+  trial-log.md. Local run test: `node main.ts` writes the exact 78-char line
+  to /output/entry.txt (verified, no trailing newline).
+- v1 bundle: `bundle-2-v1.tar.gz`, 340,546 bytes, sha256
+  `5cd0cf613767788612005718e36d08e3cbb6b0658ffb126b248ed5cb3ba2197f`
+  (2 sessions bundled: builder + parent coordinator, 0 usage rows attached —
+  subagent rows flush only when the run ends; coordinator re-bundles).
+- v1 check: 12 passed / 2 failed / 5 skipped. FAILS: thinking_priced
+  (0 usage rows — see above) and thinking_revised (no file revised yet).
+  thinking_reproduces 96.7% (59/61 lines, main.ts 8 authored lines).
+  Repo: https://github.com/rwnliwan/invent-a-word-vanisneeze, HEAD
+  `3ae30640242203e42a7f85e2a14934081b84d421` (commit v1), About verified:
+  homepage = bounty URL, topics makefun/ai-agents/bounties.
+- v2 (this revision): trial-log.md updated with the real v1 bundle + check
+  results above, to satisfy thinking_revised. Re-bundle + re-check follow;
+  thinking_priced is expected to stay failed until the coordinator re-bundles
+  with usage rows after this run ends.
